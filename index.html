@@ -1,7 +1,133 @@
-<!DOCTYPE html>
-<html>
-<body>
-  <hi>안녕하세요, 제 홈페이지입니다</hi>
-  <p>GitHub Pages로 만들었습니다!</p>
-</body>
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="이주원의 개인 홈페이지입니다. 서울대학교 첨단융합학부 26학번."
+    />
+    <title>이주원 | 개인 홈페이지</title>
+    <style>
+      :root {
+        --ink: #13213d;
+        --muted: #61708d;
+        --line: #d9e0ea;
+        --paper: #ffffff;
+        --wash: #f4f7fb;
+        --accent: #2e6cd1;
+      }
+
+      * { box-sizing: border-box; }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        color: var(--ink);
+        background: var(--wash);
+        font-family: "Pretendard", "Noto Sans KR", "Malgun Gothic", sans-serif;
+        line-height: 1.6;
+      }
+
+      main {
+        display: grid;
+        min-height: 100svh;
+        padding: 24px;
+        place-items: center;
+      }
+
+      .profile {
+        width: min(100%, 720px);
+        padding: clamp(32px, 8vw, 72px);
+        background: var(--paper);
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        box-shadow: 0 18px 50px rgb(19 33 61 / 8%);
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin: 0 0 26px;
+        color: var(--accent);
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+      }
+
+      .eyebrow::before {
+        width: 22px;
+        height: 2px;
+        background: currentColor;
+        content: "";
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(2.5rem, 10vw, 5.5rem);
+        letter-spacing: -0.07em;
+        line-height: 1.08;
+      }
+
+      .intro {
+        max-width: 33rem;
+        margin: 24px 0 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 2.7vw, 1.2rem);
+      }
+
+      dl {
+        display: grid;
+        grid-template-columns: 100px 1fr;
+        gap: 16px 20px;
+        margin: 48px 0 0;
+        padding: 28px 0 0;
+        border-top: 1px solid var(--line);
+      }
+
+      dt {
+        color: var(--muted);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      dd {
+        margin: 0;
+        font-size: 1rem;
+        font-weight: 600;
+      }
+
+      footer {
+        margin-top: 48px;
+        color: var(--muted);
+        font-size: 0.82rem;
+      }
+
+      @media (max-width: 480px) {
+        main { padding: 14px; }
+        .profile { border-radius: 18px; }
+        dl { grid-template-columns: 1fr; gap: 3px; margin-top: 38px; }
+        dd + dt { margin-top: 13px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article class="profile" aria-labelledby="name">
+        <p class="eyebrow">PERSONAL PAGE</p>
+        <h1 id="name">이주원</h1>
+        <p class="intro">배움을 쌓고, 생각을 넓혀 가는 중입니다.</p>
+
+        <dl aria-label="소개">
+          <dt>소속</dt>
+          <dd>서울대학교 첨단융합학부</dd>
+          <dt>학번</dt>
+          <dd>2026학번</dd>
+        </dl>
+
+        <footer>© 2026 이주원</footer>
+      </article>
+    </main>
+  </body>
 </html>
