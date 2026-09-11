@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="이주원의 개인 홈페이지입니다. 서울대학교 첨단융합학부 26학번."
+      content="이주원의 개인 홈페이지입니다. 서울대학교 첨단융합학부 26학번, 바둑을 좋아하는 2007년생입니다."
     />
     <title>이주원 | 개인 홈페이지</title>
     <style>
@@ -77,23 +77,38 @@
         font-size: clamp(1rem, 2.7vw, 1.2rem);
       }
 
-      dl {
+      .facts {
         display: grid;
-        grid-template-columns: 100px 1fr;
-        gap: 16px 20px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         margin: 48px 0 0;
-        padding: 28px 0 0;
-        border-top: 1px solid var(--line);
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 14px;
       }
 
-      dt {
+      .fact {
+        min-height: 122px;
+        padding: 24px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .fact:nth-child(odd) {
+        border-right: 1px solid var(--line);
+      }
+
+      .fact:nth-last-child(-n + 2) {
+        border-bottom: 0;
+      }
+
+      .fact dt {
         color: var(--muted);
         font-size: 0.9rem;
         font-weight: 700;
       }
 
-      dd {
-        margin: 0;
+      .fact dd {
+        margin: 7px 0 0;
         font-size: 1rem;
         font-weight: 600;
       }
@@ -107,8 +122,11 @@
       @media (max-width: 480px) {
         main { padding: 14px; }
         .profile { border-radius: 18px; }
-        dl { grid-template-columns: 1fr; gap: 3px; margin-top: 38px; }
-        dd + dt { margin-top: 13px; }
+        .facts { grid-template-columns: 1fr; margin-top: 38px; }
+        .fact { min-height: auto; padding: 20px; border-bottom: 1px solid var(--line); }
+        .fact:nth-child(odd) { border-right: 0; }
+        .fact:nth-last-child(-n + 2) { border-bottom: 1px solid var(--line); }
+        .fact:last-child { border-bottom: 0; }
       }
     </style>
   </head>
@@ -117,13 +135,25 @@
       <article class="profile" aria-labelledby="name">
         <p class="eyebrow">PERSONAL PAGE</p>
         <h1 id="name">이주원</h1>
-        <p class="intro">배움을 쌓고, 생각을 넓혀 가는 중입니다.</p>
+        <p class="intro">빛나는 청춘</p>
 
-        <dl aria-label="소개">
-          <dt>소속</dt>
-          <dd>서울대학교 첨단융합학부</dd>
-          <dt>학번</dt>
-          <dd>2026학번</dd>
+        <dl class="facts" aria-label="소개">
+          <div class="fact">
+            <dt>소속</dt>
+            <dd>서울대학교 첨단융합학부</dd>
+          </div>
+          <div class="fact">
+            <dt>학번</dt>
+            <dd>2026학번</dd>
+          </div>
+          <div class="fact">
+            <dt>출생</dt>
+            <dd>2007년생</dd>
+          </div>
+          <div class="fact">
+            <dt>취미</dt>
+            <dd>바둑</dd>
+          </div>
         </dl>
 
         <footer>© 2026 이주원</footer>
